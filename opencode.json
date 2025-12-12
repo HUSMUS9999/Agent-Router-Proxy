@@ -1,0 +1,41 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "ida-pro-mcp": {
+      "type": "local",
+      "command": [
+        "/usr/bin/python3",
+        "/home/hus/.local/lib/python3.11/site-packages/ida_pro_mcp/server.py",
+        "--ida-rpc",
+        "http://127.0.0.1:13337"
+      ],
+      "enabled": false
+    }
+  },
+  "tui": {
+    "scroll_speed": 3,
+    "scroll_acceleration": {
+      "enabled": true
+    }
+  },
+  "provider": {
+    "agentrouter": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "AgentRouter",
+      "options": {
+        "baseURL": "http://127.0.0.1:8888/v1",
+        "apiKey": "sk-Yf1u7hxIotkuVSq1180usx7VVugH3skifDa1NsjxsquOkZ3Q"
+      },
+      "models": {
+        "deepseek-v3.2": {
+          "name": "DeepSeek V3.2",
+          "limit": { "context": 128000, "output": 8192 }
+        },
+        "deepseek-r1-0528": {
+          "name": "DeepSeek R1",
+          "limit": { "context": 128000, "output": 64000 }
+        }
+      }
+    }
+  }
+}
